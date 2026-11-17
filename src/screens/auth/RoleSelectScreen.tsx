@@ -9,7 +9,7 @@ export function RoleSelectScreen({ navigation }: AuthScreenProps<'RoleSelect'>) 
   return (
     <SafeAreaView style={styles.container} edges={['bottom']}>
       <ScrollView>
-        <BrandHero badge="ECOSSISTEMA IPB" subtitle="Gestão inteligente de campos, parcelas e equipa" />
+        <BrandHero badge="ECOSSISTEMA IPB" subtitle="Gestão de campos, parcelas e equipa" />
         <View style={styles.content}>
           <Text style={styles.title}>Entrar como</Text>
           <Text style={styles.subtitle}>Selecione o seu perfil de acesso para continuar</Text>
