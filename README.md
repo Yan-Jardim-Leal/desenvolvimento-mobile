@@ -1,32 +1,31 @@
-# React + TypeScript + Vite
+# FarmIPB
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Frontend do FarmIPB com mocks de dados.
 
-Currently, two official plugins are available:
+## Executar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Usa Node.js 22.13.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npx expo start
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Estrutura
+
+```
+src/
+  theme/        cores, espaçamentos e tons
+  types/        modelos de domínio e de formulários
+  data/         dados simulados (mocks)
+  store/        reducer, ações e criadores de ações
+  context/      DataContext (estado da app) e AuthContext (sessão)
+  services/     consultas puras sobre o estado, autenticação, estatísticas e apresentação
+  hooks/        hooks reutilizáveis (utilizador atual, permissões, formulários)
+  utils/        datas, formatação e validação
+  components/
+    ui/         componentes genéricos (Button, Card, TextField, ...)
+    domain/     componentes do domínio (TaskRow, SensorGrid, ...)
+  navigation/   navegadores por perfil (auth, admin, agricultor, operador)
+  screens/      ecrãs agrupados por área
+```
